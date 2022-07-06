@@ -1,0 +1,46 @@
+{
+  // Setting's gist
+  "sync.gist": "26153c364fd05250b054de40cf8186c3",
+  // Terminal
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  // Workbench
+  "workbench.colorTheme": "Aura Dark",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+  // Editor
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 16,
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.suggestSelection": "first",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //Explorer
+  "explorer.compactFolders": false,
+  // Emmet
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // Extensions
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "code-runner.clearPreviousOutput": true,
+  "remote.extensionKind": {
+    "adpyke.codesnap": ["ui"]
+  }
+}
