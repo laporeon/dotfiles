@@ -36,12 +36,6 @@ alias zshconfig="nvim ~/.zshrc"
 alias gitconfig="nvim ~/.gitconfig"
 alias bashconfig="nvim ~/.bashrc"
 alias nvimconfig="nvim ~/.config/nvim"
-# List files 
-alias lt="exa --tree"
-alias ls='exa --icons --color=always --group-directories-first'
-alias ll='exa -alF --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias l='exa -F --icons --color=always --group-directories-first'
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
