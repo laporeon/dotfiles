@@ -1,6 +1,3 @@
-// 20230919124057
-// https://gist.githubusercontent.com/laporeon/0bd7ef9a929e52fca9e1b03de7cd3b59/raw/f49f775d6517e68cc4d4dbcf3254f256445a57d0/dcf.omp.json
-
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
@@ -13,7 +10,7 @@
             "style": "folder"
           },
           "style": "plain",
-          "template": "{{ .Path }}",
+          "template": "<#00c200>⬢</>  {{ .Path }}",
           "type": "path"
         },
         {
@@ -22,36 +19,19 @@
             "branch_icon": " "
           },
           "style": "plain",
-          "template": " <#ffffff>on</> <#ff6600>{{ .HEAD }}</>",
+          "template": "<#ff6600> {{ .HEAD }} </>",
           "type": "git"
         },
         {
           "foreground": "#c2d94c",
           "style": "plain",
-          "template": " ✗",
+          "template": " \u2717",
           "type": "exit"
         },
         {
-          "foreground": "#ffffff",
-          "properties": {
-            "style": "austin",
-            "threshold": 0
-          },
-          "style": "diamond",
-          "template": "<#ffffff> took</> <#c2d94c>{{ .FormattedMs }}</>",
-          "type": "executiontime"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
           "foreground": "#00c200",
           "style": "plain",
-          "template": "❯",
+          "template": "\u276f",
           "type": "text"
         }
       ],
