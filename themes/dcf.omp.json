@@ -10,23 +10,21 @@
             "style": "folder"
           },
           "style": "plain",
-          "template": "<#00c200>⬢</>  {{ .Path }}",
+          "template": "<#00c200>⬢</>  {{ .Path }} ",
           "type": "path"
         },
         {
-          "foreground": "#FFF",
+          "foreground": "#ff6600",
           "properties": {
-            "branch_icon": " "
+            "branch_icon": " ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
           },
           "style": "plain",
-          "template": "<#ff6600> {{ .HEAD }} </>",
+          "template": "{{ .HEAD }} {{ if .Working.Changed }}<#ef5350>[!]{{ .Working.String }}</> {{ end }}",
           "type": "git"
-        },
-        {
-          "foreground": "#c2d94c",
-          "style": "plain",
-          "template": " \u2717",
-          "type": "exit"
         },
         {
           "foreground": "#00c200",
