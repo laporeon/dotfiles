@@ -4,30 +4,31 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ===== THEME ===== # 
+# ===== THEME ===== #
 ZSH_THEME="dcf"
 
 LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
 
-# ===== PLUGINS ===== # 
+# ===== PLUGINS ===== #
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# ===== ALIASES ===== # 
+# ===== ALIASES ===== #
 
-# Changing Directories 
+# Changing Directories
 alias ..="cd .."
 alias ....="cd ../.."
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
 alias udemy="cd ~/Development/Studies/Udemy"
-# Personal scripts 
+# Personal scripts
 alias commit="zsh ~/Development/conventional-commits.sh"
 alias explorer="explorer.exe ."
 alias refresh="source ~/.zshrc"
-alias start-services="sudo service mysql start && sudo service postgresql start && sudo service docker start"
+alias start="sudo service mysql start && sudo service postgresql start && sudo service docker start"
+alias cleanup="rm -rf node_modules/"
 # Update packages
 alias supdate="sudo apt update"
 alias supgrade="sudo apt upgrade -y"
@@ -58,12 +59,8 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
-LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
-
 # Hide % on start
 unsetopt PROMPT_SP
-
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
