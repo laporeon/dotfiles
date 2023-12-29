@@ -5,6 +5,10 @@
 :set smarttab
 :set showtabline=2
 :set title
+:set completeopt-=preview " For No Previews
+
+" Shortcuts
+source $HOME/.config/nvim/modules/shortcuts.vim
 
 " Plugins
 source $HOME/.config/nvim/modules/plugins.vim
@@ -13,23 +17,8 @@ lua require('plugins')
 " Cores
 " Habilita syntax highlight
 syntax on
-
+" Tema
 :colorscheme tokyonight
-
-nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
-
-nmap <F8> :TagbarToggle<CR>
-nmap <C-s> :w<CR>
-
-:set completeopt-=preview " For No Previews
-
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-
-" Prettier
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-" ESLint
-command! -nargs=0 ESLint :CocCommand eslint.executeAutofix 
 
 " indentLine configuration
 let g:indentLine_enabled = 1
@@ -55,3 +44,6 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+
+" Reminder to install
+" :CocInstall coc-prettier coc-jest coc-html coc-eslint coc-tsserver coc-python coc-json coc-java coc-css
