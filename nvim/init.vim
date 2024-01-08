@@ -46,4 +46,4 @@ let g:airline_symbols.linenr = ''
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 " Reminder to install
-" :CocInstall coc-prettier coc-jest coc-html coc-eslint coc-tsserver coc-python coc-json coc-java coc-css
+" :CocInstall coc-prettier coc-jest coc-html coc-eslint coc-tsserver coc-python coc-json coc-java coc-css coc-prisma
