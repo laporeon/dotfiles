@@ -33,3 +33,10 @@ nnoremap <silent> <A-7> <Cmd>BufferGoto 7<CR>
 nnoremap <silent> <A-8> <Cmd>BufferGoto 8<CR>
 nnoremap <silent> <A-9> <Cmd>BufferGoto 9<CR>
 nnoremap <silent> <A-0> <Cmd>BufferLast<CR>
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
