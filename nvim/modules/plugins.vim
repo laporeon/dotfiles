@@ -5,6 +5,8 @@ call plug#begin()
   Plug 'https://github.com/folke/tokyonight.nvim'
   Plug 'NLKNguyen/papercolor-theme'
   
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } " Find Files
   Plug 'pangloss/vim-javascript' " Suporte à liguagem JavaScript
   Plug 'sheerun/vim-polyglot' " Adicionar syntax hightlight para várias linguagens
   Plug 'jiangmiao/auto-pairs'   " Fazer fechamento automático de pares (parênteses, colchetes, aspas, etc)
@@ -24,7 +26,9 @@ call plug#begin()
   Plug 'romgrk/barbar.nvim' " Multiple tabs
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' } " Markdown preview
   Plug 'https://github.com/folke/which-key.nvim' " Key bindings
-  Plug 'andweeb/presence.nvim' " Discord presence
+  " Plug 'andweeb/presence.nvim' " Discord presence
+  Plug 'pantharshit00/vim-prisma' " Prisma syntax highlight 
   set encoding=UTF-8
 
 call plug#end()
+
