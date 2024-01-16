@@ -4,6 +4,7 @@ call plug#begin()
   Plug 'ayu-theme/ayu-vim'
   Plug 'https://github.com/folke/tokyonight.nvim'
   Plug 'NLKNguyen/papercolor-theme'
+  Plug 'navarasu/onedark.nvim'
   
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } " Find Files
