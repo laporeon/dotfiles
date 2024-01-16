@@ -108,4 +108,7 @@ require'nvim-web-devicons'.setup {
  };
 }
 
-
+require('onedark').setup {
+    style = 'deep'
+}
+require('onedark').load()
