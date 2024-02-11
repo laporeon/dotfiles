@@ -27,8 +27,9 @@ alias udemy="cd ~/Development/Studies/Udemy"
 alias commit="zsh ~/Development/conventional-commits.sh"
 alias explorer="explorer.exe ."
 alias refresh="source ~/.zshrc"
-alias start="sudo service mysql start && sudo service postgresql start && sudo service docker start"
 alias cleanup="rm -rf node_modules/"
+alias findnodem="find . -name "node_modules" -type d -prune -print | xargs du -chs"
+alias removenodem="find . -name "node_modules" -prune -exec rm -rf '{}' +"
 # Update packages
 alias supdate="sudo apt update"
 alias supgrade="sudo apt upgrade -y"
@@ -65,3 +66,5 @@ unsetopt PROMPT_SP
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export JAVA_HOME="/usr/bin/jvm/java-17-openjdk-amd64";
