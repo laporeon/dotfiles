@@ -30,3 +30,8 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# Aliases
+function workspace() { Set-Location "C:\Workspace" }
+function psconfig { nvim $PROFILE }
+function key() { type "C:\Users\laporeon\gotta-a-secret.txt" }
