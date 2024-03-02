@@ -19,12 +19,14 @@ source $ZSH/oh-my-zsh.sh
 # Changing Directories
 alias ..="cd .."
 alias ....="cd ../.."
+alias temp="cd /tmp"
+alias opt="cd /opt"
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
 alias udemy="cd ~/Development/Studies/Udemy"
 # Personal scripts
-alias commit="zsh ~/Development/conventional-commits.sh"
+alias commit="bash ~/Development/conventional-commits.sh"
 alias explorer="explorer.exe ."
 alias refresh="source ~/.zshrc"
 alias cleanup="rm -rf node_modules/"
