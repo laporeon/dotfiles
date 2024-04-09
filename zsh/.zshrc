@@ -19,12 +19,14 @@ source $ZSH/oh-my-zsh.sh
 # Changing Directories
 alias ..="cd .."
 alias ....="cd ../.."
-alias temp="cd /tmp"
-alias opt="cd /opt"
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
 alias udemy="cd ~/Development/Studies/Udemy"
+alias downloads="cd ~/Downloads"
+alias docs="cd ~/Documents"
+alias temp="cd /tmp"
+alias opt="cd /opt"
 # Personal scripts
 alias commit="bash ~/Development/conventional-commits.sh"
 alias explorer="explorer.exe ."
@@ -34,6 +36,7 @@ alias findnodem="find . -name "node_modules" -type d -prune -print | xargs du -c
 alias removenodem="find . -name "node_modules" -prune -exec rm -rf '{}' +"
 # Update packages
 alias supdate="sudo apt update"
+alias upgradable="apt list --upgradable"
 alias supgrade="sudo apt upgrade -y"
 # Config files
 alias zshconfig="nvim ~/.zshrc"
@@ -69,4 +72,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export JAVA_HOME="/usr/bin/jvm/java-17-openjdk-amd64";
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
