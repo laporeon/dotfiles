@@ -34,9 +34,6 @@ alias refresh="source ~/.zshrc"
 alias cleanup="rm -rf node_modules/"
 alias findnodem="find . -name "node_modules" -type d -prune -print | xargs du -chs"
 alias removenodem="find . -name "node_modules" -prune -exec rm -rf '{}' +"
-alias j8="sdk use java 8.0.392-zulu"
-alias j11="sdk use java 11.0.21-zulu"
-alias j17="sdk use java 17.0.11-oracle"
 # Update packages
 alias supdate="sudo apt update"
 alias upgradable="apt list --upgradable"
@@ -75,6 +72,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64";
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64";
+# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
+export PATH=$JAVA_HOME/bin:$PATH
