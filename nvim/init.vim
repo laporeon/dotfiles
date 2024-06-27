@@ -6,6 +6,8 @@
 :set showtabline=2
 :set title
 :set completeopt-=preview " For No Previews
+:set encoding=UTF-8
+
 
 " Shortcuts
 source $HOME/.config/nvim/modules/shortcuts.vim
@@ -18,7 +20,7 @@ lua require('plugins')
 " Habilita syntax highlight
 syntax on
 " Tema
-:colorscheme tokyonight
+:colorscheme onedark
 
 " indentLine configuration
 let g:indentLine_enabled = 1

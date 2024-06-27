@@ -4,5 +4,8 @@
   "diagnostic.infoSign": "🐦",
   "diagnostic.hintSign": "👀",
 
-  "coc.preferences.formatOnSave": true
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "prisma"
+  ]
 }

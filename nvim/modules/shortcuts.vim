@@ -1,5 +1,9 @@
 " Mapping keys
-let mapleader = "l"
+let mapleader = "\<space>"
+
+" Move lines up and down like VSCode
+nnoremap <silent> <A-j> <Cmd>:m .-2<CR>
+nnoremap <silent> <A-k> <Cmd>:m .+1<CR>
 
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -7,7 +11,6 @@ nmap <C-s> :w<CR>
 
 " NvimTree
 nmap <C-b> :NvimTreeToggle<CR>
-nnoremap <silent> <leader>l <C-w>h
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
@@ -39,4 +42,5 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 
