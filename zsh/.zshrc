@@ -40,10 +40,10 @@ alias supdate="sudo apt update"
 alias upgradable="apt list --upgradable"
 alias supgrade="sudo apt upgrade -y"
 # Config files
-alias zshc="nvim ~/.zshrc"
-alias gitc="nvim ~/.gitconfig"
-alias bashc="nvim ~/.bashrc"
-alias nvimc="nvim ~/.config/nvim"
+alias zshc="code ~/.zshrc"
+alias gitc="code ~/.gitconfig"
+alias bashc="code ~/.bashrc"
+alias nvimc="code ~/.config/nvim"
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
