@@ -6,7 +6,6 @@ nnoremap <silent> <A-j> <Cmd>:m .-2<CR>
 nnoremap <silent> <A-k> <Cmd>:m .+1<CR>
 
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
-nmap <F8> :TagbarToggle<CR>
 nmap <C-s> :w<CR>
 
 " NvimTree
