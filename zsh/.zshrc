@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/sbin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -22,7 +22,6 @@ alias ....="cd ../.."
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
-alias udemy="cd ~/Development/Studies/Udemy"
 alias downloads="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias temp="cd /tmp"
@@ -35,6 +34,7 @@ alias cleanup="rm -rf node_modules/"
 alias findnodem="find . -name "node_modules" -type d -prune -print | xargs du -chs"
 alias removenodem="find . -name "node_modules" -prune -exec rm -rf '{}' +"
 alias secret="cat ~/Documents/secret.txt | tr -d '[:space:]' | xclip -selection clipboard"
+alias sin="sudo dpkg -i"
 # Update packages
 alias supdate="sudo apt update"
 alias upgradable="apt list --upgradable"
