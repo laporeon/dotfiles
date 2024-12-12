@@ -1,14 +1,33 @@
-# Dotfiles
+<h1 align="center">
+  <img width="120" src="https://i.imgur.com/PfPvjUM.png" alt="dotfiles logo">
+  <p>Dotfiles</p>
+</h1>
 
-> My configuration files for zsh, neovim and more.
-## Installing
+Here I keep some of my configuration files for both Windows and Linux.
 
-- First, remember to give permission to shell script files:
+To copy the content, I run the following script:
 
-```bash
-chmod +x ./install.sh ./symlinks.sh
+```sh
+./copy.sh
 ```
 
-- Run `./install.sh` to install Neovim, Vim Plug, Zsh and Oh My Zsh.
+## 🛠 Environment
 
-- Run `./symlinks.sh` to create symbolic links to their configuration files.
+I'm using Ubuntu with GNOME as my primary operational system.
+
+- **Icons**: [Papirus](https://www.gnome-look.org/p/1166289)
+- **Cursor**: [Bibata Modern Ice](https://www.gnome-look.org/p/1197198)
+- **Terminal**: GNOME Terminal
+- **Shell**: [zsh](https://ohmyz.sh/) + [oh-my-zsh](https://ohmyz.sh/) + [my custom theme](./linux/zsh/themes/dcf.zsh-theme)
+- **GNOME Extensions**:
+  - [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
+  - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+  - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+  - [Sound percentage](https://extensions.gnome.org/extension/2120/sound-percentage/)
+  - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+  - [WinTile](https://extensions.gnome.org/extension/1723/wintile-windows-10-window-tiling-for-gnome/)
+  - [Transparent Top Bar](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/)
+
+## 💻 Preview
+
+![Ubuntu](./assets/ubuntu.png)
