@@ -37,6 +37,7 @@ alias fnode="find . -name "node_modules" -type d -prune -print | xargs du -chs"
 alias prgn="find . -name "node_modules" -prune -exec rm -rf '{}' +"
 alias secret="cat ~/Documents/secret.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias obscam="sudo modprobe -r v4l2loopback"
+alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
