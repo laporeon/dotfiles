@@ -25,9 +25,9 @@ I'm using Ubuntu with GNOME as my primary operational system.
   - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
   - [Sound percentage](https://extensions.gnome.org/extension/2120/sound-percentage/)
   - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-  - [WinTile](https://extensions.gnome.org/extension/1723/wintile-windows-10-window-tiling-for-gnome/)
+  - [Tiling Shell](https://extensions.gnome.org/extension/7065/tiling-shell/)
   - [Transparent Top Bar](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/)
 
 ## 💻 Preview
 
-![Ubuntu](./assets/ubuntu.png)
+![Ubuntu](./assets/Ubuntu.jpg)
