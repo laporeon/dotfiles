@@ -37,7 +37,7 @@ alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -sele
 alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias obscam="sudo modprobe -r v4l2loopback"
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
-alias apps="bash ~/Development/appsupdater.sh"
+alias apps="bash ~/Development/appsmanager.sh"
 alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
 alias async="rclone copy -u ~/Documents/Async dropbox:Async"
 # Manage packages
