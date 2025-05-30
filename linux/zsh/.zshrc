@@ -40,6 +40,9 @@ alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext
 alias apps="bash ~/Development/appsmanager.sh"
 alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
 alias async="rclone copy -u ~/Documents/Async dropbox:Async"
+alias fpl="flatpak list"
+alias fpup="flatpak update"
+alias fpun="flatpak uninstall --unused"
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
