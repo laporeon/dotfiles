@@ -3,7 +3,7 @@
   Dotfiles
 </h1>
 
-This repository stores my configuration files for both Linux and Windows environments. It also includes helpful resources such as fonts, `README.md` templates for personal projects, and setup scripts to automate the configuration of my Linux distribution.
+This repository stores my configuration files for both Linux and Windows environments. It also includes helpful resources such as fonts and setup scripts to automate the configuration of my Linux distribution.
 
 To set up everything, I simply run:
 
