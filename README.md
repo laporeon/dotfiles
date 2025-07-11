@@ -1,19 +1,21 @@
 <h1 align="center">
-  <img width="120" src="https://i.imgur.com/PfPvjUM.png" alt="dotfiles logo">
-  <p>Dotfiles</p>
+  <img width="120" src="https://i.imgur.com/PfPvjUM.png" alt="dotfiles logo"><br/>
+  Dotfiles
 </h1>
 
-Here I keep some of my configuration files for both Windows and Linux.
+This repository stores my configuration files for both Linux and Windows environments. It also includes helpful resources such as fonts and setup scripts to automate the configuration of my Linux distribution.
 
-To copy the content, I run the following script:
+To set up everything, I simply run:
 
 ```sh
-./copy.sh
+./setup.sh
 ```
+
+This will automatically apply the configuration files and install the necessary components.
 
 ## 🛠 Environment
 
-I'm using Ubuntu with GNOME as my primary operational system.
+I'm using Ubuntu with GNOME as my primary operating system.
 
 - **Icons**: [Papirus](https://www.gnome-look.org/p/1166289)
 - **Cursor**: [Bibata Modern Ice](https://www.gnome-look.org/p/1197198)
@@ -30,4 +32,4 @@ I'm using Ubuntu with GNOME as my primary operational system.
 
 ## 💻 Preview
 
-![Ubuntu](./assets/Ubuntu.jpg)
+![Ubuntu](./assets/screenshots/Ubuntu.png)
