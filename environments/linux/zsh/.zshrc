@@ -38,6 +38,7 @@ alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selec
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
 alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
 alias async="rclone copy -u ~/Documents/Async dropbox:Async"
+alias apps="bash ~/Development/dotfiles/helpers/apps-updater.sh"
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
