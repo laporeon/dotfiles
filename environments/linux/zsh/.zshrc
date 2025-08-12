@@ -13,6 +13,7 @@ LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/Development/dotfiles/helpers/updates.sh
 
 # ===== ALIASES ===== #
 
@@ -22,9 +23,9 @@ alias ....="cd ../.."
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
-alias downloads="cd ~/Downloads"
+alias dwl="cd ~/Downloads"
 alias docs="cd ~/Documents"
-alias temp="cd /tmp"
+alias tmp="cd /tmp"
 alias opt="cd /opt"
 # Personal scripts
 alias dtf="code ~/Development/dotfiles"
@@ -38,13 +39,14 @@ alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selec
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
 alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
 alias async="rclone copy -u ~/Documents/Async dropbox:Async"
-alias apps="bash ~/Development/dotfiles/helpers/apps-updater.sh"
+alias udisc=update_discord
+alias ubruno=update_bruno
+alias udbeaver=update_dbeaver
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
 alias spg="sudo apt purge --auto-remove"
 alias upd="sudo apt update"
-alias upgradable="apt list --upgradable"
 alias upg="sudo apt upgrade -y"
 # Config files
 alias zshc="nvim ~/.zshrc"
@@ -86,3 +88,4 @@ export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
 # export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
 
 export PATH=$JAVA_HOME/bin:$PATH
+
