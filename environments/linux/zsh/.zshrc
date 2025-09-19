@@ -38,10 +38,12 @@ alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -sele
 alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
 alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
-alias async="rclone copy -u ~/Documents/Async dropbox:Async"
+alias async="rclone sync ~/Documents/Async dropbox:Async"
+alias cv="rclone sync ~/Documents/Currículos dropbox:Curriculos"
 alias udisc=update_discord
 alias ubruno=update_bruno
 alias udbeaver=update_dbeaver
+alias clp="bash ~/Development/dotfiles/helpers/clipboard-backup.sh"
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
@@ -84,8 +86,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64";
 # export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64";
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
-# export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
+# export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
 
 export PATH=$JAVA_HOME/bin:$PATH
 
