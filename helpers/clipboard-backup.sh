@@ -11,15 +11,22 @@ echo "=== BACKUP DOS FAVORITOS DO CLIPBOARD ==="
 echo "Data: $(date)"
 echo ""
 
+# Verificar se jq está instalado
+if ! command -v jq >/dev/null; then
+    echo "ERRO: Instale o jq para processamento correto de favoritos multilinha."
+    exit 1
+fi
+
 # Verificar se o arquivo registry existe
 if [ ! -f "$REGISTRY_FILE" ]; then
     echo "ERRO: Arquivo registry não encontrado em $REGISTRY_FILE"
     exit 1
 fi
 
-# Extrair apenas os favoritos (favorite:true)
 echo "Extraindo favoritos..."
-FAVORITES=$(grep -o '{[^}]*"favorite":true[^}]*}' "$REGISTRY_FILE" 2>/dev/null)
+
+# Extrair apenas os favoritos com jq (multi-linha seguro)
+FAVORITES=$(jq -r '.[] | select(.favorite == true) | .contents' "$REGISTRY_FILE" 2>/dev/null)
 
 if [ -z "$FAVORITES" ]; then
     echo "Nenhum favorito encontrado no momento."
@@ -28,7 +35,7 @@ if [ -z "$FAVORITES" ]; then
 fi
 
 # Contar favoritos
-COUNT=$(echo "$FAVORITES" | wc -l)
+COUNT=$(echo "$FAVORITES" | grep -c '^')
 echo "Favoritos encontrados: $COUNT"
 echo ""
 
@@ -36,16 +43,15 @@ echo ""
 echo "=== FAVORITOS ATUAIS ===" > "$BACKUP_FILE"
 echo "Data do backup: $(date)" >> "$BACKUP_FILE"
 echo "" >> "$BACKUP_FILE"
-
 # Também atualizar o arquivo latest
 echo "=== FAVORITOS ATUAIS ===" > "$LATEST_BACKUP"
 echo "Data do backup: $(date)" >> "$LATEST_BACKUP"
 echo "" >> "$LATEST_BACKUP"
 
 COUNTER=1
-echo "$FAVORITES" | while IFS= read -r line; do
-    CONTENT=$(echo "$line" | grep -o '"contents":"[^"]*"' | sed 's/"contents":"//g' | sed 's/"$//g')
-    if [ ! -z "$CONTENT" ]; then
+# Lê favoritos separando por NUL (caso tenha linhas vazias ou múltiplas)
+echo "$FAVORITES" | while IFS= read -r CONTENT; do
+    if [ -n "$CONTENT" ]; then
         echo "$COUNTER. $CONTENT" >> "$BACKUP_FILE"
         echo "$COUNTER. $CONTENT" >> "$LATEST_BACKUP"
         echo "$COUNTER. $CONTENT"
@@ -57,10 +63,9 @@ echo ""
 echo "Backup com timestamp salvo em: $BACKUP_FILE"
 echo "Backup latest atualizado em: $LATEST_BACKUP"
 
-
-# Limpar backups antigos (manter apenas os últimos 10)
+# Limpar backups antigos (manter apenas os últimos 3)
 cd "$BACKUP_DIR"
-ls -t favorites-*.txt | tail -n +11 | xargs rm -f 2>/dev/null
+ls -t clipboard-favorites-*.txt | tail -n +4 | xargs rm -f 2>/dev/null
 
 echo "Backup concluído com sucesso!"
 echo ""
