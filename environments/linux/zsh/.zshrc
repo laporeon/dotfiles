@@ -44,6 +44,8 @@ alias udisc=update_discord
 alias ubruno=update_bruno
 alias udbeaver=update_dbeaver
 alias clp="bash ~/Development/dotfiles/helpers/clipboard-backup.sh"
+alias dbstart="sudo systemctl start postgresql mysql mongod"
+alias dbstop="sudo systemctl stop postgresql mysql mongod"
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
