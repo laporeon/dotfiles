@@ -10,7 +10,7 @@ ZSH_THEME="dcf"
 LS_COLORS=$LS_COLORS:'ow=01;34:' ; export LS_COLORS
 
 # ===== PLUGINS ===== #
-plugins=(git)
+plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/Development/dotfiles/helpers/updates.sh
@@ -41,6 +41,7 @@ alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
 alias async="rclone sync ~/Documents/Async dropbox:Async"
 alias cv="rclone sync ~/Documents/Currículos dropbox:Curriculos"
 alias bdev='zip -r ~/development.zip ~/Development && rclone sync ~/development.zip dropbox:Development'
+alias bkp='zip -r ~/backup_$(date +%Y-%m-%d).zip ~/Development ~/Documents ~/Pictures ~/Music ~/Videos && mv backup_$(date +%Y-%m-%d).zip /mnt/sda1/'
 alias udisc=update_discord
 alias ubruno=update_bruno
 alias udbeaver=update_dbeaver
