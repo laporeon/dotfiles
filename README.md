@@ -20,7 +20,7 @@ I'm using Ubuntu with GNOME as my primary operating system.
 - **Icons**: [Papirus](https://www.gnome-look.org/p/1166289)
 - **Cursor**: [Bibata Modern Ice](https://www.gnome-look.org/p/1197198)
 - **Terminal**: GNOME Terminal
-- **Shell**: [zsh](https://www.zsh.org/) + [oh-my-zsh](https://ohmyz.sh/) + [my custom theme](./linux/zsh/themes/dcf.zsh-theme)
+- **Shell**: [zsh](https://www.zsh.org/) + [oh-my-zsh](https://ohmyz.sh/) + [my custom theme](./environments/linux/zsh/themes/dcf.zsh-theme)
 - **GNOME Extensions**:
   - [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
   - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
