@@ -1,7 +1,14 @@
-PROMPT='%{$fg_bold[green]%}⬢  %{$fg_bold[yellow]%}%c $(git_prompt_info)%{$reset_color%}'
-PROMPT+='%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯ )'
+setopt prompt_subst
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}\uE0A0 "
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$reset_color%} "
+GREEN="%{$fg_bold[green]%}"
+YELLOW="%{$fg_bold[yellow]%}"
+CYAN="%{$fg_bold[cyan]%}"
+RED="%{$fg_bold[red]%}"
+RESET="%{$reset_color%}"
+
+PROMPT="${GREEN}⬢  ${YELLOW}%c \$(git_prompt_info)${GREEN}❯ ${RESET}"
+
+ZSH_THEME_GIT_PROMPT_PREFIX="${CYAN}\uE0A0 "
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_DIRTY=" ${RED}[?] "
 ZSH_THEME_GIT_PROMPT_CLEAN=" "
