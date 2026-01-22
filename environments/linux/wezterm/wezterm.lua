@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm'
 
 local config = wezterm.config_builder()
+local act = wezterm.action
 
 config.font_size = 10
 config.font = wezterm.font 'JetBrains Mono'
@@ -15,7 +16,14 @@ config.window_padding = {
   left = 8,
   right = 8,
   top = 8,
-  bottom = 8,
+	bottom = 8
+}
+
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Right" } },
+    action = act.PasteFrom("Clipboard"),
+  },
 }
 
 config.keys = {
