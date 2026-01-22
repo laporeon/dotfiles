@@ -10,8 +10,9 @@ echo -e "\n${BLUE}Installing JetBrains Mono NerdFont...${RESET}"
 sudo cp -r $DOTFILES/assets/fonts/JetBrainsMonoNerdFont/*.ttf /usr/share/fonts/
 sudo fc-cache -fv
 
-echo -e "\n${BLUE}Copying nvim, zsh and custom theme configuration...${RESET}"
+echo -e "\n${BLUE}Copying nvim, zsh, wezterm and custom theme configuration...${RESET}"
 cp -r $DOTFILES/environments/linux/nvim $HOME/.config/nvim/
+cp -r $DOTFILES/environments/linux/wezterm $HOME/.config/wezterm/
 cp $DOTFILES/environments/linux/zsh/.zshrc $HOME/
 cp $DOTFILES/environments/linux/zsh/themes/dcf.zsh-theme $HOME/.oh-my-zsh/themes/
 
