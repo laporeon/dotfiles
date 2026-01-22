@@ -67,7 +67,7 @@ alias nvimc="nvim ~/.config/nvim"
 alias wztc="nvim ~/.config/wezterm/wezterm.lua"
 alias fstc="nvim ~/.config/fastfetch/config.jsonc"
 
-# ===== ZI INSTALLATION CHECK ===== #
+# ===== ZI INSTALLATION CHECK ===== #
 if [[ ! -f "$HOME/.zi/bin/zi.zsh" ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
