@@ -36,6 +36,7 @@ alias commit="bash ~/Development/dotfiles/helpers/conventional-commits.sh"
 alias zshr="source ~/.zshrc"
 alias zcp="cp ~/.zshrc ~/Development/dotfiles/environments/linux/zsh/"
 alias wztcp="cp ~/.config/wezterm/wezterm.lua ~/Development/dotfiles/environments/linux/wezterm/"
+alias fstcp="cp ~/.config/fastfetch/config.jsonc ~/Development/dotfiles/environments/linux/fastfetch"
 alias clsn="rm -rf node_modules/"
 alias clsg="rm -rf .git/"
 alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
@@ -64,8 +65,9 @@ alias gitc="nvim ~/.gitconfig"
 alias bashc="nvim ~/.bashrc"
 alias nvimc="nvim ~/.config/nvim"
 alias wztc="nvim ~/.config/wezterm/wezterm.lua"
+alias fstc="nvim ~/.config/fastfetch/config.jsonc"
 
-# ===== ZI INSTALLATION CHECK ===== #
+# ===== ZI INSTALLATION CHECK ===== #
 if [[ ! -f "$HOME/.zi/bin/zi.zsh" ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod g-rwX "$HOME/.zi"
