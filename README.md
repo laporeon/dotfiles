@@ -19,7 +19,7 @@ I'm using Ubuntu with GNOME as my primary operating system.
 
 - **Icons**: [Papirus](https://www.gnome-look.org/p/1166289)
 - **Cursor**: [Bibata Modern Ice](https://www.gnome-look.org/p/1197198)
-- **Terminal**: GNOME Terminal
+- **Terminal**: [WezTerm](https://wezterm.org/)
 - **Shell**: [zsh](https://www.zsh.org/) + [oh-my-zsh](https://ohmyz.sh/) + [my custom theme](./environments/linux/zsh/themes/dcf.zsh-theme)
 - **GNOME Extensions**:
   - [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
