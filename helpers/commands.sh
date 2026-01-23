@@ -43,7 +43,7 @@ dsync() {
   rclone sync ~/Documents/Async dropbox:Async && \
   rclone sync ~/Documents/Currículos dropbox:Curriculos
 
-  echo -e "${GREEN}✔ All documents synced with Dropbox!${RESET}"
+  echo -e "${GREEN}✔ Documents successfully synced with Dropbox!${RESET}"
 }
 
 dtfcp() {
@@ -51,7 +51,7 @@ dtfcp() {
   cp ~/.config/wezterm/wezterm.lua ~/Development/dotfiles/environments/linux/wezterm/ && \
   cp ~/.config/fastfetch/config.jsonc ~/Development/dotfiles/environments/linux/fastfetch
 
-  echo -e "${GREEN}✔ All dotfiles synced to dotfiles${RESET}"
+  echo -e "${GREEN}✔ Dotfiles successfully synced!${RESET}"
 }
 
 bkp() {
