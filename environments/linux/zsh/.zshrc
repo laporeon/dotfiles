@@ -1,28 +1,22 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/sbin
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# ===== THEME AND COLORS ===== #
+# ===== THEME AND PLUGINS ===== #
 ZSH_THEME="dcf"
 LS_COLORS=$LS_COLORS:'ow=02;34:' ; export LS_COLORS
-
-# ===== PLUGINS ===== #
 plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/Development/dotfiles/helpers/updates.sh
+source $HOME/Development/dotfiles/helpers/commands.sh
 
 # ===== HISTORY CONFIGURATION ===== #
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS
 
 # ===== ALIASES ===== #
 
-# Directories
+# Navigation
 alias ..="cd .."
 alias ....="cd ../.."
 alias dev="cd ~/Development"
@@ -34,22 +28,11 @@ alias docs="cd ~/Documents"
 alias dtf="code ~/Development/dotfiles"
 alias commit="bash ~/Development/dotfiles/helpers/conventional-commits.sh"
 alias zshr="source ~/.zshrc"
-alias zcp="cp ~/.zshrc ~/Development/dotfiles/environments/linux/zsh/"
-alias wztcp="cp ~/.config/wezterm/wezterm.lua ~/Development/dotfiles/environments/linux/wezterm/"
-alias fstcp="cp ~/.config/fastfetch/config.jsonc ~/Development/dotfiles/environments/linux/fastfetch"
 alias clsn="rm -rf node_modules/"
 alias clsg="rm -rf .git/"
 alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
-alias obsidian="rclone sync ~/Documents/Obsidian dropbox:Obsidian"
-alias async="rclone sync ~/Documents/Async dropbox:Async"
-alias cv="rclone sync ~/Documents/Currículos dropbox:Curriculos"
-alias bdev='zip -r ~/development.zip ~/Development && rclone sync ~/development.zip dropbox:Development'
-alias bkp='zip -r ~/backup_$(date +%Y-%m-%d).zip ~/Development ~/Documents ~/Pictures ~/Music ~/Videos && mv backup_$(date +%Y-%m-%d).zip /mnt/sda1/'
-alias udisc=update_discord
-alias ubruno=update_bruno
-alias udbeaver=update_dbeaver
 alias clp="bash ~/Development/dotfiles/helpers/clipboard-backup.sh"
 alias dbstart="sudo systemctl start postgresql mysql mongod"
 alias dbstop="sudo systemctl stop postgresql mysql mongod"
@@ -86,6 +69,7 @@ zinit light marlonrichert/zsh-autocomplete
 # ===== ZSH-AUTOCOMPLETE CONFIGURATIONS ===== #
 zstyle ':autocomplete:*' default-context history-incremental-search-backward
 zstyle ':autocomplete:*' min-input 1
+zstyle ':autocomplete:*' append-semicolon no
 bindkey '^I' expand-or-complete
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566573'
 
@@ -100,5 +84,5 @@ export NVM_DIR="$HOME/.nvm"
 # export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64";
 # export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
-export PATH=$JAVA_HOME/bin:$PATH
 
+export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$PATH:/usr/sbin

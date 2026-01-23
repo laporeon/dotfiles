@@ -4,7 +4,7 @@ GREEN='\033[0;32m'
 BLUE="\033[1;34m"
 RESET='\033[0m'
 
-# ===== DISCORD UPDATE ===== #
+# =========== UPDATES ========== #
 update_discord() {
     echo -e "\n${BLUE}↑ Updating Discord...${RESET}"
 
@@ -15,7 +15,6 @@ update_discord() {
     echo -e "${GREEN}✔ Discord successfully updated!${RESET}"
 }
 
-# ===== BRUNO UPDATE ===== #
 update_bruno() {
     echo -e "\n${BLUE}↑ Updating Bruno...${RESET}"
 
@@ -27,7 +26,6 @@ update_bruno() {
     echo -e "${GREEN}✔ Bruno successfully updated!${RESET}"
 }
 
-# ===== DBEAVER UPDATE ===== #
 update_dbeaver() {
     echo -e "\n${BLUE}↑ Updating DBeaver...${RESET}"
 
@@ -36,4 +34,32 @@ update_dbeaver() {
     rm /tmp/dbeaver.deb
 
     echo -e "${GREEN}✔ DBeaver successfully updated!${RESET}"
+}
+
+# =========== BACKUPS ========== #
+
+dsync() {
+  rclone sync ~/Documents/Obsidian dropbox:Obsidian && \
+  rclone sync ~/Documents/Async dropbox:Async && \
+  rclone sync ~/Documents/Currículos dropbox:Curriculos
+
+  echo -e "${GREEN}✔ All documents synced with Dropbox!${RESET}"
+}
+
+dtfcp() {
+  cp ~/.zshrc ~/Development/dotfiles/environments/linux/zsh/ && \
+  cp ~/.config/wezterm/wezterm.lua ~/Development/dotfiles/environments/linux/wezterm/ && \
+  cp ~/.config/fastfetch/config.jsonc ~/Development/dotfiles/environments/linux/fastfetch
+
+  echo -e "${GREEN}✔ All dotfiles synced to dotfiles${RESET}"
+}
+
+bkp() {
+  zip -r ~/development.zip ~/Development && \
+  rclone sync ~/development.zip dropbox:Development && \
+  local file="backup_$(date +%Y-%m-%d).zip"
+  zip -r ~/$file ~/Development ~/Documents ~/Pictures ~/Music ~/Videos && \
+  mv ~/$file /mnt/sda1/
+
+  echo -e "${GREEN}✔ Backup completed${RESET}"
 }
