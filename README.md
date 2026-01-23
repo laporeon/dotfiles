@@ -3,15 +3,7 @@
   Dotfiles
 </h1>
 
-This repository stores my configuration files for both Linux and Windows environments. It also includes helpful resources such as fonts and setup scripts to automate the configuration of my Linux distribution.
-
-To set up everything, I simply run:
-
-```sh
-./setup.sh
-```
-
-This will automatically apply the configuration files and install the necessary components.
+Here I store my configuration files for both Linux and Windows environments.
 
 ## 🛠 Environment
 
