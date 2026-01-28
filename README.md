@@ -16,14 +16,12 @@ I'm using Ubuntu with GNOME as my primary operating system.
 - **GNOME Extensions**:
   - [Bluetooth Quick Connect](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
   - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
-  - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
   - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
   - [Sound percentage](https://extensions.gnome.org/extension/2120/sound-percentage/)
   - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
   - [Tiling Shell](https://extensions.gnome.org/extension/7065/tiling-shell/)
   - [Transparent Top Bar](https://extensions.gnome.org/extension/3960/transparent-top-bar-adjustable-transparency/)
   - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
-  - [Open Weather](https://extensions.gnome.org/extension/750/openweather/)
 
 ## 💻 Preview
 
