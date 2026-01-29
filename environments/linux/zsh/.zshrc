@@ -33,7 +33,6 @@ alias clsg="rm -rf .git/"
 alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
-alias clp="bash ~/Development/dotfiles/helpers/clipboard-backup.sh"
 alias dbstart="sudo systemctl start postgresql mysql mongod"
 alias dbstop="sudo systemctl stop postgresql mysql mongod"
 # Manage packages
