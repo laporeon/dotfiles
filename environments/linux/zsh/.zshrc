@@ -12,7 +12,7 @@ source $HOME/Development/dotfiles/helpers/commands.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS
+setopt AUTO_MENU SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS CORRECT AUTO_CD 
 
 # ===== ALIASES ===== #
 
@@ -44,8 +44,8 @@ alias upg="sudo apt upgrade -y"
 # Config files
 alias zshc="nvim ~/.zshrc"
 alias gitc="nvim ~/.gitconfig"
-alias bashc="nvim ~/.bashrc"
-alias nvimc="nvim ~/.config/nvim"
+alias bshc="nvim ~/.bashrc"
+alias nvc="nvim ~/.config/nvim"
 alias wztc="nvim ~/.config/wezterm/wezterm.lua"
 alias fstc="nvim ~/.config/fastfetch/config.jsonc"
 
@@ -62,14 +62,13 @@ source "$HOME/.zi/bin/zi.zsh"
 
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
 zinit light marlonrichert/zsh-autocomplete
 
 # ===== ZSH-AUTOCOMPLETE CONFIGURATIONS ===== #
 zstyle ':autocomplete:*' default-context history-incremental-search-backward
 zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:*' append-semicolon no
-bindkey '^I' expand-or-complete
+bindkey '^I' menu-expand-or-complete
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566573'
 
 # ===== ENVIRONMENT ===== #
@@ -84,4 +83,4 @@ export NVM_DIR="$HOME/.nvm"
 # export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
 
-export PATH=$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$PATH:/usr/sbin
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:/usr/sbin:$PATH"

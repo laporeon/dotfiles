@@ -1,139 +1,120 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-	"logo": {  },
+  "logo": {},
   "display": {
-    "separator": "",
-    "constants": ["──────────────"],
-    "key": {
-      "width": 15,
-    },
+    "separator": "  ",
   },
   "modules": [
     {
-      "type": "custom",
-      "format": "{#90}{$1}──────────────────────────{$1}{#}",
-    },
-    {
       "type": "title",
-      "format": "{user-name}@{host-name}",
-      "outputColor": "white",
-      "key": "\ue602 PROFILE",
-      "keyColor": "38;2;200;200;220",
+      "key": "ホスト",
+      "keyColor": "blue",
     },
-
-    {
-      "type": "custom",
-      "format": "{#90}{$1}──────────────────────────{$1}{#}",
-    },
+    "break",
     {
       "type": "os",
-      "format": "{pretty-name}",
-      "key": "\ue602 OS",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "host",
-      "key": "\ue602 HOST",
-      "keyColor": "38;2;200;200;220",
+      "key": "╭─ ",
+      "keyColor": "yellow",
     },
     {
       "type": "kernel",
-      "key": "\ue602 KERNEL",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "uptime",
-      "key": "\ue602 UPTIME",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ ",
+      "format": "{1} {2}",
+      "keyColor": "yellow",
     },
     {
       "type": "packages",
-      "key": "\ue602 PACKAGES",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ 󰏖",
+      "keyColor": "yellow",
     },
     {
       "type": "shell",
-      "key": "\ue602 SHELL",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ ",
+      "keyColor": "yellow",
     },
     {
       "type": "terminal",
       "format": "{pretty-name}",
-      "key": "\ue602 TERMINAL",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "custom",
-      "format": "{#90}{$1}──────────────────────────{$1}{#}",
-    },
-    {
-      "type": "cpu",
-      "key": "\ue602 CPU",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "gpu",
-      "key": "\ue602 GPU",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "display",
-      "format": "{width}x{height} @ {refresh-rate}Hz in {name} {inch}\"",
-      "key": "\ue602 RESOLUTION",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "memory",
-      "key": "\ue602 MEMORY",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "swap",
-      "key": "\ue602 SWAP",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "disk",
-      "key": "\ue602 DISKS",
-      "keyColor": "38;2;200;200;220",
-    },
-    {
-      "type": "custom",
-      "format": "{#90}{$1}──────────────────────────{$1}{#}",
+      "key": "├─ ",
+      "keyColor": "yellow",
     },
     {
       "type": "de",
-      "key": "\ue602 DE",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ ",
+      "keyColor": "yellow",
     },
     {
       "type": "wm",
-      "key": "\ue602 WM",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ ",
+      "keyColor": "yellow",
     },
     {
       "type": "theme",
-      "key": "\ue602 THEME",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ 󰉼",
+      "keyColor": "yellow",
     },
     {
       "type": "cursor",
-      "key": "\ue602 CURSOR",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ 󰇀",
+      "keyColor": "yellow",
     },
     {
       "type": "icons",
-      "key": "\ue602 ICONS",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ 󰀻",
+      "keyColor": "yellow",
     },
+
     {
       "type": "terminalfont",
-      "key": "\ue602 FONT",
-      "keyColor": "38;2;200;200;220",
+      "key": "├─ ",
+      "keyColor": "yellow",
+    },
+
+    {
+      "type": "host",
+      "key": "├─ ",
+      "keyColor": "yellow",
     },
     {
-      "type": "custom",
-      "format": "{#90}{$1}──────────────────────────{$1}{#}",
+      "type": "cpu",
+      "key": "├─ 󰍛",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "gpu",
+      "key": "├─ 󰘚",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "display",
+      "format": "{width}x{height} @ {refresh-rate}Hz",
+      "key": "├─ 󰍹",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "memory",
+      "key": "├─ 󰑭",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "swap",
+      "key": "├─ 󰓡",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "disk",
+      "key": "├─ ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "uptime",
+      "key": "╰─ 󰅐",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 5,
+      "symbol": "circle",
     },
   ],
 }

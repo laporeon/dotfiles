@@ -6,18 +6,18 @@ return {
   font = wezterm.font 'JetBrains Mono',
   default_cursor_style = "BlinkingBar",
   color_scheme = 'Tokyo Night',
-  initial_cols = 100,
-  initial_rows = 30,
+  initial_cols = 80,
+  initial_rows = 24,
   hide_tab_bar_if_only_one_tab = true,
   enable_tab_bar = true,
   
 	window_background_opacity = 0.90,
 
 	window_padding = {
-    left = 10,
-    right = 10,
-    top = 10,
-    bottom = 10
+    left = 8,
+    right = 8,
+    top = 8,
+    bottom = 8
   },
   
 	mouse_bindings = {
