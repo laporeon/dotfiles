@@ -11,7 +11,7 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   enable_tab_bar = true,
   
-	window_background_opacity = 0.90,
+	window_background_opacity = 0.95,
 
 	window_padding = {
     left = 8,
