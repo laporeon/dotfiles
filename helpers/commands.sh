@@ -5,6 +5,7 @@ BLUE="\033[1;34m"
 RED='\033[0;31m'
 RESET='\033[0m'
 
+DOCUMENTS="$HOME/Documents"
 DEVELOPMENT="$HOME/Development"
 DOTFILES="$HOME/Development/dotfiles"
 
@@ -63,9 +64,9 @@ lsync() {
 dsync() {
   echo -e "\n${BLUE}↑ Syncing documents with Dropbox...${RESET}"
 
-  rclone sync "$HOME/Documents/Obsidian" dropbox:Obsidian && \
-  rclone sync "$HOME/Documents/Async" dropbox:Async && \
-  rclone sync "$HOME/Documents/Currículos" dropbox:Curriculos && \
+  rclone sync "$DOCUMENTS/Obsidian" dropbox:Obsidian && \
+  rclone sync "$DOCUMENTS/Async" dropbox:Async && \
+  rclone sync "$DOCUMENTS/Currículos" dropbox:Curriculos && \
   echo -e "${GREEN}\n✔ Documents successfully synced!${RESET}" || error
 }
 
@@ -85,7 +86,7 @@ bkp() {
 
   # Development folder
   echo -e "\n${BLUE}Backing up Development folder...${RESET}"
-  zip -qr /tmp/development.zip "$HOME/Development" && \
+  zip -qr /tmp/development.zip "$DEVELOPMENT" && \
   echo -e "\n${BLUE}↑ Syncing Development folder with Dropbox...${RESET}" && \
   rclone sync /tmp/development.zip dropbox:Development && \
   rm /tmp/development.zip
@@ -97,9 +98,9 @@ bkp() {
   zip -qr "$HOME/$file" \
       "$HOME/.themes" \
       "$HOME/.icons" \
-      "$HOME/Development" \
+      "$DEVELOPMENT" \
+      "$DOCUMENTS" \
       "$HOME/Downloads" \
-      "$HOME/Documents" \
       "$HOME/Pictures" \
       "$HOME/Music" \
       "$HOME/Videos"
@@ -108,4 +109,62 @@ bkp() {
   mv "$HOME/$file" /mnt/sda1/ && \
   local backup_size=$(du -h /mnt/sda1/"$file" | cut -f1) && \
   echo -e "${GREEN}\n✔ Backup completed: $file (${backup_size})${RESET}" || error
+}
+
+# Backup script of Clipboard Indicator favorites
+# Date format: $(date +"%Y-%m-%d %H:%M:%S")
+clipboard_backup() {
+  REGISTRY_FILE="$HOME/.cache/clipboard-indicator@tudmotu.com/registry.txt"
+  BACKUP_DIR="$DEVELOPMENT"
+  BACKUP_FILE="$BACKUP_DIR/clipboard-favorites-$(date +%Y%m%d-%H%M%S).txt"
+  LATEST_BACKUP="$BACKUP_DIR/clipboard-favorites-LATEST.txt"
+
+  echo -e "\n${BLUE}Backing up Clipboard favorites (Date: $(date)) ${RESET}"
+
+  if ! command -v jq >/dev/null; then
+      echo "ERROR: Install jq to process multiline favorites."
+      exit 1
+  fi
+
+  if [ ! -f "$REGISTRY_FILE" ]; then
+      echo "ERROR: Registry file not found at $REGISTRY_FILE"
+      exit 1
+  fi
+
+  echo "\nExtracting favorites..."
+
+  FAVORITES=$(jq -r '.[] | select(.favorite == true) | .contents' "$REGISTRY_FILE" 2>/dev/null)
+
+  if [ -z "$FAVORITES" ]; then
+      echo "No favorites found."
+      echo "Make sure you have items starred."
+      exit 0
+  fi
+
+  COUNT=$(echo "$FAVORITES" | grep -c '.')
+  echo "Favorites found: $COUNT"
+
+ echo "=== CURRENT FAVORITES ===" > "$BACKUP_FILE"
+  echo "Backup date: $(date)" >> "$BACKUP_FILE"
+  echo "" >> "$BACKUP_FILE"
+
+ echo "=== CURRENT FAVORITES ===" > "$LATEST_BACKUP"
+  echo "Backup date: $(date)" >> "$LATEST_BACKUP"
+  echo "" >> "$LATEST_BACKUP"
+
+  COUNTER=1
+  echo "$FAVORITES" | while IFS= read -r CONTENT; do
+      if [ -n "$CONTENT" ]; then
+          echo "$COUNTER. $CONTENT" >> "$BACKUP_FILE"
+          echo "$COUNTER. $CONTENT" >> "$LATEST_BACKUP"
+          COUNTER=$((COUNTER + 1))
+      fi
+  done
+
+  echo "\nTimestamped backup file saved to: $BACKUP_FILE"
+  echo "Latest backup file updated: $LATEST_BACKUP"
+
+  ls -t "$BACKUP_DIR"/clipboard-favorites-*.txt | tail -n +3 | xargs rm -f 2>/dev/null
+
+  echo -e "${GREEN}\n✔ Backup successfully finished!${RESET}" || error
 }
