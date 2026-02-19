@@ -10,23 +10,19 @@ return {
   initial_rows = 24,
   hide_tab_bar_if_only_one_tab = true,
   enable_tab_bar = true,
-  
-	window_background_opacity = 0.95,
-
-	window_padding = {
+  window_background_opacity = 0.95,
+  window_padding = {
     left = 8,
     right = 8,
     top = 8,
     bottom = 8
   },
-  
-	mouse_bindings = {
+  mouse_bindings = {
     {
       event = { Up = { streak = 1, button = "Right" } },
       action = wezterm.action.PasteFrom("Clipboard"),
     },
   },
-
   keys = {
     { key = 'RightArrow', mods = 'CTRL', action = wezterm.action.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
     { key = 'DownArrow', mods = 'CTRL', action = wezterm.action.SplitVertical{ domain = 'CurrentPaneDomain' } },
@@ -42,3 +38,4 @@ return {
     { key = '0', mods = 'CTRL', action = wezterm.action.ResetFontSize },
   }
 }
+

@@ -12,13 +12,11 @@ source $HOME/Development/dotfiles/helpers/commands.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt AUTO_MENU SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS CORRECT AUTO_CD 
+setopt AUTO_MENU SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS CORRECT AUTO_CD HIST_VERIFY
 
 # ===== ALIASES ===== #
 
 # Navigation
-alias ..="cd .."
-alias ....="cd ../.."
 alias dev="cd ~/Development"
 alias projects="cd ~/Development/Projects"
 alias studies="cd ~/Development/Studies"
@@ -33,8 +31,8 @@ alias clsg="rm -rf .git/"
 alias kpsxc="sed -n '1p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selection clipboard"
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
-alias dbstart="sudo systemctl start postgresql mysql mongod"
-alias dbstop="sudo systemctl stop postgresql mysql mongod"
+alias dbup="sudo systemctl start postgresql mysql mongod"
+alias dbdn="sudo systemctl stop postgresql mysql mongod"
 # Manage packages
 alias sdi="sudo dpkg -i"
 alias sapt="sudo apt install"
@@ -62,14 +60,8 @@ source "$HOME/.zi/bin/zi.zsh"
 
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-zinit light marlonrichert/zsh-autocomplete
-
-# ===== ZSH-AUTOCOMPLETE CONFIGURATIONS ===== #
-zstyle ':autocomplete:*' default-context history-incremental-search-backward
-zstyle ':autocomplete:*' min-input 1
-zstyle ':autocomplete:*' append-semicolon no
-bindkey '^I' menu-expand-or-complete
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#566573'
+zinit light zsh-users/zsh-completions
+autoload -U compinit && compinit -C
 
 # ===== ENVIRONMENT ===== #
 unsetopt PROMPT_SP

@@ -80,20 +80,19 @@ dtfcp() {
   echo -e "${GREEN}\n✔ Dotfiles successfully backed up!${RESET}" || error
 }
 
-
 bkp() {
   echo -e "\n${BLUE}Starting backup process...${RESET}"
 
   # Development folder
   echo -e "\n${BLUE}Backing up Development folder...${RESET}"
   zip -qr /tmp/development.zip "$DEVELOPMENT" && \
-  echo -e "\n${BLUE}↑ Syncing Development folder with Dropbox...${RESET}" && \
+  echo -e "${BLUE}↑ Syncing Development folder with Dropbox...${RESET}" && \
   rclone sync /tmp/development.zip dropbox:Development && \
   rm /tmp/development.zip
 
   # Full backup
   local file="backup_$(date +%Y-%m-%d_%H-%M).zip"
-  echo -e "\n${BLUE}Creating $file...${RESET}"
+  echo -e "${BLUE}Creating $file...${RESET}"
 
   zip -qr "$HOME/$file" \
       "$HOME/.themes" \
@@ -105,7 +104,7 @@ bkp() {
       "$HOME/Music" \
       "$HOME/Videos"
 
-  echo -e "\n${BLUE}Moving backup to external drive...${RESET}"
+  echo -e "${BLUE}Moving backup to external drive...${RESET}"
   mv "$HOME/$file" /mnt/sda1/ && \
   local backup_size=$(du -h /mnt/sda1/"$file" | cut -f1) && \
   echo -e "${GREEN}\n✔ Backup completed: $file (${backup_size})${RESET}" || error
