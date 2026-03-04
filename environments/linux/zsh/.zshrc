@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # ===== THEME AND PLUGINS ===== #
-ZSH_THEME="dcf"
+ZSH_THEME="lambda"
 LS_COLORS=$LS_COLORS:'ow=02;34:' ; export LS_COLORS
 plugins=(git docker docker-compose)
 
@@ -75,4 +75,6 @@ export NVM_DIR="$HOME/.nvm"
 # export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64";
 
-export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:/usr/sbin:$PATH"
+export MAVEN_HOME="/opt/maven"
+
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/sbin:$PATH"
