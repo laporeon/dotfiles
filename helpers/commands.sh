@@ -1,7 +1,6 @@
 #!/bin/bash
 
 GREEN='\033[0;32m'
-BOLD_WHITE="\033[1;34m"
 RED='\033[0;31m'
 RESET='\033[0m'
 BOLD_WHITE='\033[1;37m'
@@ -17,9 +16,45 @@ error() {
 # ===== INSTALLATIONS / UPDATE ===== #
 install_jetbrains_font() {
     echo -e "${BOLD_WHITE}Installing JetBrains Mono NerdFont...${RESET}"
-    sudo cp -r "$DOTFILES/assets/fonts/JetBrainsMonoNerdFont/"*.ttf /usr/share/fonts/ && \
-    sudo fc-cache -fv && \
-    echo -e "${GREEN}✔ JetBrains Mono NerdFont successfully installed!${RESET}" || error
+
+    command -v ttx >/dev/null 2>&1 || { echo >&2 "fonttools/ttx not installed. Run: sudo apt install fonttools"; return 1; }
+
+    local tmp_dir
+    tmp_dir=$(mktemp -d)
+
+    curl -fLo "$tmp_dir/JetBrainsMonoNerdFont.zip" \
+        "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip"
+
+    unzip -q "$tmp_dir/JetBrainsMonoNerdFont.zip" -d "$tmp_dir/fonts"
+
+    for fontfile in "$tmp_dir/fonts"/*.ttf; do
+        local basename
+        basename=$(basename "$fontfile")
+        echo "Processing: $basename"
+
+        ttx -q "$fontfile"
+        local ttxfile="${fontfile%.ttf}.ttx"
+
+        sed -i \
+            -e 's/JetBrainsMono Nerd Font/JetBrains Mono/g' \
+            -e 's/JetBrainsMonoNerdFont/JetBrainsMono/g' \
+            -e 's/JetBrainsMono NF/JetBrains Mono/g' \
+            "$ttxfile"
+
+        ttx -q -m "$fontfile" "$ttxfile"
+
+        local newfont="${fontfile%.ttf}#1.ttf"
+        mv "$newfont" "$tmp_dir/fonts/$basename"
+        rm "$ttxfile"
+    done
+
+    if sudo cp "$tmp_dir/fonts"/*.ttf /usr/share/fonts/ && sudo fc-cache -fv; then
+        echo -e "${GREEN}✔ JetBrains Mono NerdFont successfully installed!${RESET}"
+    else
+        error
+    fi
+
+    rm -rf "$tmp_dir"
 }
 
 update_discord() {
@@ -144,11 +179,11 @@ clipboard_backup() {
   COUNT=$(echo "$FAVORITES" | grep -c '.')
   echo "Favorites found: $COUNT"
 
- echo "=== CURRENT FAVORITES ===" > "$BACKUP_FILE"
+  echo "=== CURRENT FAVORITES ===" > "$BACKUP_FILE"
   echo "Backup date: $(date)" >> "$BACKUP_FILE"
   echo "" >> "$BACKUP_FILE"
 
- echo "=== CURRENT FAVORITES ===" > "$LATEST_BACKUP"
+  echo "=== CURRENT FAVORITES ===" > "$LATEST_BACKUP"
   echo "Backup date: $(date)" >> "$LATEST_BACKUP"
   echo "" >> "$LATEST_BACKUP"
 
