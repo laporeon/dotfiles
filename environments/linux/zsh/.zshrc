@@ -12,16 +12,13 @@ source $ZSH/oh-my-zsh.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt AUTO_MENU SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS CORRECT HIST_VERIFY
+setopt AUTO_MENU SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS HIST_FIND_NO_DUPS CORRECT HIST_VERIFY AUTO_CD
 
 # ===== CUSTOM COMMANDS ===== #
 source $HOME/Development/dotfiles/helpers/commands.sh
 # ===== ALIASES  ===== #
 alias dev="cd ~/Development"
-alias projects="cd ~/Development/Projects"
-alias studies="cd ~/Development/Studies"
-alias dwl="cd ~/Downloads"
-alias docs="cd ~/Documents"
+alias pjs="cd ~/Development/Projects"
 alias dtf="code ~/Development/dotfiles"
 alias commit="bash ~/Development/dotfiles/helpers/conventional-commits.sh"
 alias zshr="source ~/.zshrc && echo '✔ zshrc reloaded'"
@@ -32,9 +29,9 @@ alias ente="sed -n '2p' ~/Documents/setup.txt | tr -d '[:space:]' | xclip -selec
 alias ytd="yt-dlp -f \"bv*+ba/b\" --merge-output-format mp4 -o \"%(title)s.%(ext)s\""
 alias dbup="sudo systemctl start postgresql mysql mongod"
 alias dbdn="sudo systemctl stop postgresql mysql mongod"
-alias sdi="sudo dpkg -i"
-alias sapt="sudo apt install"
-alias spg="sudo apt purge --auto-remove"
+alias dki="sudo dpkg -i"
+alias ins="sudo apt install -y"
+alias prg="sudo apt purge --auto-remove"
 alias upd="sudo apt update"
 alias upg="sudo apt upgrade -y"
 alias zshc="nvim ~/.zshrc"
