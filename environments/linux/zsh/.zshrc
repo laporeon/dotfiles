@@ -35,11 +35,6 @@ alias prg="sudo apt purge --auto-remove"
 alias upd="sudo apt update"
 alias upg="sudo apt upgrade -y"
 alias zshc="nvim ~/.zshrc"
-alias gitc="nvim ~/.gitconfig"
-alias bshc="nvim ~/.bashrc"
-alias nvc="nvim ~/.config/nvim"
-alias wztc="nvim ~/.config/wezterm/wezterm.lua"
-alias fstc="nvim ~/.config/fastfetch/config.jsonc"
 
 # ===== ZI INSTALLATION CHECK ===== #
 if [[ ! -f "$HOME/.zi/bin/zi.zsh" ]]; then

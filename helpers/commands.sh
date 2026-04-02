@@ -194,8 +194,8 @@ clipboard_backup() {
 cleanup_system() {
   echo -e "${BOLD_WHITE}Starting system cleanup...${RESET}"
 
-  echo -e "${BOLD_WHITE}Updating package lists...${RESET}"
-  sudo apt update -y
+  local initial_used
+  initial_used=$(df -B1M / | awk 'NR==2 {gsub(/M/,"",$3); print $3}')
 
   echo -e "${BOLD_WHITE}Removing orphaned packages...${RESET}"
   sudo apt autoremove -y --purge
@@ -212,20 +212,24 @@ cleanup_system() {
     echo -e "${BOLD_WHITE}snap not found, skipping...${RESET}"
   fi
 
-  echo -e "${BOLD_WHITE}Removing temporary files (safe)...${RESET}"
+  echo -e "${BOLD_WHITE}Removing temporary files...${RESET}"
   sudo find /tmp -mindepth 1 -maxdepth 1 -exec rm -rf -- {} + 2>/dev/null || true
   sudo find /var/tmp -mindepth 1 -maxdepth 1 -exec rm -rf -- {} + 2>/dev/null || true
 
   echo -e "${BOLD_WHITE}Vacuuming old logs (keeping last 7 days)...${RESET}"
   sudo journalctl --vacuum-time=7d
 
-  echo -e "${BOLD_WHITE}Dropping RAM cache (optional)...${RESET}"
-  if [[ "${DROP_CACHES:-0}" == "1" ]]; then
-    sync
-    echo 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null
-  else
-    echo -e "${BOLD_WHITE}Skipping drop_caches (set DROP_CACHES=1 to enable).${RESET}"
-  fi
+  local final_used
+  final_used=$(df -B1M / | awk 'NR==2 {gsub(/M/,"",$3); print $3}')
 
-  echo -e "${GREEN}✔ Cleanup complete!${RESET}"
+  local freed=$((initial_used - final_used))
+
+  if (( freed <= 0 )); then
+    echo -e "${GREEN}✔ Cleanup complete! No significant space was freed.${RESET}"
+  else
+    local freed_gib
+    freed_gib=$(awk "BEGIN {printf \"%.2f\", $freed / 1024}")
+    echo -e "${GREEN}✔ Cleanup complete!${RESET}"
+    echo -e "${GREEN}Storage freed: ${freed_gib} GiB${RESET}"
+  fi
 }
