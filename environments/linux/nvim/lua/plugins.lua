@@ -37,7 +37,11 @@ require'nvim-web-devicons'.setup {
  };
 }
 
+require("catppuccin").setup({
+  flavour = "mocha", 
+})
+
 require('lualine').setup {
-  options = { theme = 'onedark' }
+  options = { theme = 'ayu_mirage' }
 }
 

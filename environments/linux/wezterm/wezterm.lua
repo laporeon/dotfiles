@@ -5,7 +5,7 @@ return {
   font_size = 10,
   font = wezterm.font 'JetBrains Mono',
   default_cursor_style = "BlinkingBar",
-  color_scheme = 'Tokyo Night',
+  color_scheme = 'Catppuccin Mocha',
   initial_cols = 80,
   initial_rows = 24,
   hide_tab_bar_if_only_one_tab = true,

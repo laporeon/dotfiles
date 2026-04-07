@@ -2,7 +2,8 @@ call plug#begin()
 
   " Color Schemes
   Plug 'https://github.com/folke/tokyonight.nvim'
-  
+	Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
   " Productivity
   Plug 'https://github.com/folke/which-key.nvim'
   Plug 'jiangmiao/auto-pairs'  

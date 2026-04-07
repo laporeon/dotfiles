@@ -19,7 +19,7 @@ lua require('plugins')
 " Habilita syntax highlight
 syntax on
 " Tema
-colorscheme tokyonight
+colorscheme catppuccin
 
 " indentLine configuration
 let g:indentLine_enabled = 1
