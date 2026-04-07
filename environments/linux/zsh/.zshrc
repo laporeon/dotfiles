@@ -59,8 +59,9 @@ autoload -Uz compinit && compinit -C
 # export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64";
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export MAVEN_HOME="/opt/maven"
+export GRADLE_HOME="/opt/gradle"
 
-export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$GRADLE_HOME/bin:/usr/sbin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
